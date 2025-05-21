@@ -4,14 +4,12 @@
 To conduct a structured penetration test using ethical hacking techniques on a deliberately vulnerable virtual machine. The objective is to simulate a real-world attack scenario and then provide recommendations for remediation.
 
 # 💻 LAB ENVIRONMENT -
-|------------------|--------------------------------------|
 |Component         |  Details                             |
 |------------------|--------------------------------------|
 |Attacker Machine  |  Kali Linux (Latest Version)         |
 |Target Machine    |  Metasploitable2 / DVWA              |
 |Network Type      |  Host-Only or NAT (VMware/VirtualBox)|
 |Target IP         |  192.168.56.101 (example)            |
-|------------------|--------------------------------------|
 
 # 🚀 TASK PERFORMED –
 # 🔍 Task 1: Basic Network Scanning
@@ -19,9 +17,10 @@ Purpose: Identify open and potentially vulnerable ports and services.
 Command:
 nmap -sS -sV -T4 -Pn 192.168.56.101
 Expected Output:
-PORT    STATE  SERVICE  VERSION
-21/tcp  open   ftp      vsftpd 2.3.4
-22/tcp  open   ssh      OpenSSH 4.7p1 Debian 8ubuntu1 (protocol 2.0)
+|PORT   | STATE | SERVICE | VERSION                                     |
+|-------|-------|---------|---------------------------------------------|
+|21/tcp | open  | ftp     | vsftpd 2.3.4                                |
+|22/tcp | open  | ssh     | OpenSSH 4.7p1 Debian 8ubuntu1 (protocol 2.0)|
 Open Services Analysis:
 FTP (21): Unauthenticated access or vulnerable versions.
 SSH (22): Brute-force potential.
@@ -68,19 +67,22 @@ uid=1001(hacker) gid=1001(hacker) groups=1001(hacker),27(sudo)
 
 # 🥷 Task 6: Cracking Password Hash
 Command:
+
 Crack Using John:
+
 john --wordlist=/usr/share/wordlists/rockyou.txt hash.txt
+
 Expected Output:
+
 hacked123 (hacker)
 
 # 🔧 Task 7: Remediation And Recommendations
-Issue                               Risk                       Recommendation
-vsftpd 2.3.4 with backdoor          Remote shell access        Disable FTP or update to latest 
-                                                               version
-Web server exposes /phpinfo.php     Sensitive info disclosure  Remove or restrict access
-Default users found via enum4linux  Easy brute-force           Remove or rename default 
-                                                               account 
-Weak password found                 Easy to crack              Use strong, complex passwords
+|Issue                              | Risk                      | Recommendation                         |
+|-----------------------------------|---------------------------|----------------------------------------|
+|vsftpd 2.3.4 with backdoor         | Remote shell access       | Disable FTP or update to latest version|
+|Web server exposes /phpinfo.php    | Sensitive info disclosure | Remove or restrict access              |
+|Default users found via enum4linux | Easy brute-force          | Remove or rename default account       |
+|Weak password found                | Easy to crack             | Use strong, complex passwords          |
 
 # 📚 Conclusion
 This project demonstrated a typical penetration testing workflow including scanning, enumeration, exploitation, and remediation planning. The vulnerabilities identified are common in many legacy or misconfigured systems and serve as practical learning examples for both aspiring ethical hackers and defenders.
