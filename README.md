@@ -4,11 +4,14 @@
 To conduct a structured penetration test using ethical hacking techniques on a deliberately vulnerable virtual machine. The objective is to simulate a real-world attack scenario and then provide recommendations for remediation.
 
 # 💻 LAB ENVIRONMENT -
-Component         -  Details
-Attacker Machine  -  Kali Linux (Latest Version)
-Target Machine    -  Metasploitable2 / DVWA
-Network Type      -  Host-Only or NAT (VMware/VirtualBox)
-Target IP         -  192.168.56.101 (example)
+|------------------|--------------------------------------|
+|Component         |  Details                             |
+|------------------|--------------------------------------|
+|Attacker Machine  |  Kali Linux (Latest Version)         |
+|Target Machine    |  Metasploitable2 / DVWA              |
+|Network Type      |  Host-Only or NAT (VMware/VirtualBox)|
+|Target IP         |  192.168.56.101 (example)            |
+|------------------|--------------------------------------|
 
 # 🚀 TASK PERFORMED –
 # 🔍 Task 1: Basic Network Scanning
