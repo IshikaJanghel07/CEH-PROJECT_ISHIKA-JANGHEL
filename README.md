@@ -1,8 +1,8 @@
 # 🛡️ Penetration Testing and Remediation on a Target System
 
 ## 🎯 OBJECTIVES -
-To conduct a structured penetration test using ethical hacking techniques on a deliberately vulnerable virtual machine. The objective is to simulate a real-world attack scenario and then provide recommendations for remediation.
-
+To conduct a structured penetration test using ethical hacking techniques on a deliberately vulnerable virtual machine. The objective is to simulate a real-world attack scenario and then provide recommendations for remediation. 
+##
 
 ## 💻 LAB ENVIRONMENT -
 |Component         |  Details                             |
@@ -11,7 +11,7 @@ To conduct a structured penetration test using ethical hacking techniques on a d
 |Target Machine    |  Metasploitable2 / DVWA              |
 |Network Type      |  Host-Only or NAT (VMware/VirtualBox)|
 |Target IP         |  192.168.56.101 (example)            |
-
+##
 
 ## 🚀 TASK PERFORMED –
 ### 🔍 Task 1: Basic Network Scanning
@@ -33,7 +33,7 @@ Open Services Analysis:
 FTP (21): Unauthenticated access or vulnerable versions.
 
 SSH (22): Brute-force potential.
-
+###
 
 ### 🕵️‍♀️ Task 2: Reconnaissance
 Purpose: To identify web-based vulnerabilities and sensitive files.
